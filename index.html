@@ -80,22 +80,24 @@
 
   <!-- JavaScript -->
   <script>
-    function checkPassword() {
-      const input = document.getElementById("password-input").value;
-      const correctPassword = "tienpqvfx54822@funix.edu.vn";
-      const personalInfo = document.getElementById("personal-info");
-      const passwordForm = document.getElementById("password-form");
-      const errorMsg = document.getElementById("error-msg");
+  function checkPassword() {
+    const input = document.getElementById("password-input").value.trim();
+    const personalInfo = document.getElementById("personal-info");
+    const passwordForm = document.getElementById("password-form");
+    const errorMsg = document.getElementById("error-msg");
 
-      if (input === correctPassword) {
-        passwordForm.style.display = "none";
-        personalInfo.style.display = "block";
-        errorMsg.innerText = "";
-      } else {
-        errorMsg.innerText = "Mật khẩu không đúng. Vui lòng thử lại.";
-      }
+    // Kiểm tra định dạng email rất cơ bản
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if (emailRegex.test(input)) {
+      passwordForm.style.display = "none";
+      personalInfo.style.display = "block";
+      errorMsg.innerText = "";
+    } else {
+      errorMsg.innerText = "Vui lòng nhập địa chỉ email hợp lệ.";
     }
-  </script>
+  }
+</script>
 
 </body>
 </html>
