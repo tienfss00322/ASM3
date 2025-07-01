@@ -1,0 +1,437 @@
+/* Reset mặc định cho toàn trang */
+* {
+  box-sizing: border-box; /* Đảm bảo padding/border nằm trong width/height */
+  margin: 0;              /* Xóa margin mặc định của trình duyệt */
+  padding: 0;             /* Xóa padding mặc định của trình duyệt */
+}
+
+/* Thiết lập chung cho body */
+body {
+  font-family: sans-serif;    /* Font chữ không chân */
+  background-color: white;    /* Nền trắng */
+  font-size: 14px;            /* Cỡ chữ mặc định */
+}
+
+/* Banner - Ảnh banner với text overlay */
+.img-banner {
+  position: relative;         /* Cha cho phần tử con dùng position absolute */
+  text-align: center;         /* Căn giữa chữ theo ngang */
+  color: #f7f7f7;             /* Màu chữ nhạt gần trắng */
+}
+
+#banner {
+  position: absolute;         /* Vị trí tuyệt đối trong .img-banner */
+  top: 50%;                   /* 50% chiều cao cha */
+  left: 50%;                  /* 50% chiều rộng cha */
+  transform: translate(-50%, -50%); /* Căn giữa chính xác */
+}
+
+/* Navbar - Thanh điều hướng */
+#nav-bar .container {
+  display: flex;              /* Flexbox sắp xếp các link */
+  justify-content: center;    /* Căn giữa ngang */
+  align-items: center;        /* Căn giữa dọc */
+  border-top: 2px solid #ccc; /* Viền trên xám nhạt */
+  border-bottom: 2px solid #ccc; /* Viền dưới xám nhạt */
+  background-color: white;    /* Nền trắng */
+  padding: 20px 0;            /* Khoảng cách trên/dưới */
+  gap: 10px;                  /* Khoảng cách giữa các link */
+  flex-wrap: wrap;            /* Cho phép xuống hàng khi hẹp */
+}
+
+#nav-bar .container a {
+  flex: 1;                       /* Mỗi link chiếm đều không gian */
+  text-align: center;            /* Căn giữa chữ */
+  padding: 10px 0;               /* Khoảng cách trên/dưới */
+  text-decoration: none;         /* Bỏ gạch chân link */
+  color: #333;                   /* Màu chữ xám đậm */
+  font-weight: bold;             /* Đậm chữ */
+  border: 1px solid #bbb;        /* Viền xám nhạt */
+  border-radius: 6px;            /* Bo góc viền */
+  display: flex;                 /* Flex để chứa icon và text */
+  justify-content: center;       /* Căn giữa nội dung ngang */
+  align-items: center;           /* Căn giữa nội dung dọc */
+  gap: 5px;                      /* Khoảng cách icon - text */
+  font-size: 14px;               /* Cỡ chữ */
+}
+
+/* Avatar trong Navbar */
+#nav-bar .avatar {
+  width: 100px;                  /* Chiều rộng */
+  height: 100px;                 /* Chiều cao */
+  border-radius: 50%;            /* Hình tròn */
+  border: 3px solid #f1f1f1;     /* Viền trắng nhạt */
+  object-fit: cover;             /* Cắt ảnh vừa khung */
+  margin: 10px 0;                /* Khoảng cách trên/dưới */
+  background-color: white;       /* Nền trắng */
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2); /* Đổ bóng nhẹ */
+  z-index: 1;                     /* Lớp trên cùng */
+}
+
+/* Phần About */
+#about {
+  background-color: #f7f7f7;     /* Nền xám nhạt */
+  padding: 40px 20px;            /* Khoảng trong trên/dưới và hai bên */
+}
+
+#about .container {
+  display: grid;                         /* Grid Layout */
+  grid-template-columns: 1fr 1fr;        /* Hai cột bằng nhau */
+  column-gap: 20px;                      /* Khoảng cách giữa cột */
+  max-width: 1000px;                     /* Chiều rộng tối đa */
+  margin: auto;                          /* Căn giữa theo ngang */
+  padding-bottom: 40px;                  /* Khoảng dưới cùng */
+}
+
+#about .col {
+  background-color: #e6f0ff;             /* Nền xanh nhạt */
+  border-radius: 10px;                   /* Bo góc */
+  padding: 20px;                         /* Khoảng cách trong */
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1); /* Đổ bóng nhẹ */
+}
+
+/* Tiêu đề chung */
+h1 {
+  margin-bottom: 16px;                   /* Khoảng cách dưới */
+  font-size: 20px;                       /* Cỡ chữ */
+}
+
+/* Danh sách thông tin */
+.info li {
+  list-style: none;                      /* Bỏ bullet */
+  line-height: 1.6;                      /* Giãn dòng */
+  font-size: 13px;                       /* Cỡ chữ */
+}
+
+.info span {
+  font-weight: bold;                     /* Làm đậm phần span */
+}
+
+/* Danh sách icon mạng xã hội */
+ul.icon {
+  display: flex;                         /* Sắp xếp ngang */
+  gap: 10px;                             /* Khoảng cách giữa icon */
+  font-size: 18px;                       /* Cỡ icon */
+  color: rgb(99, 102, 252);              /* Màu xanh lam */
+  margin-top: 10px;                      /* Khoảng cách trên */
+  padding: 0;                            /* Xóa padding mặc định */
+}
+
+ul.icon li {
+  list-style: none;                      /* Bỏ bullet */
+  font-size: 16px;                       /* Cỡ icon nhỏ hơn */
+}
+
+/* Phần Job Info (Kinh nghiệm + học vấn) */
+#job-info {
+  padding: 40px 0;                       /* Khoảng cách trên/dưới */
+}
+
+.grid-3-row-2 {
+  display: grid;                                    /* Grid layout */
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Cột responsive */
+  gap: 20px;                                        /* Khoảng cách giữa ô */
+  max-width: 1000px;                                /* Chiều rộng tối đa */
+  margin: auto;                                     /* Căn giữa */
+  padding: 0 20px;                                  /* Khoảng cách ngang */
+}
+
+.border-1, .card {
+  padding: 15px;                          /* Khoảng trong */
+  border: 1px solid #ddd;                 /* Viền xám nhạt */
+  border-radius: 10px;                    /* Bo góc */
+  background-color: #fff;                 /* Nền trắng */
+  font-size: 13px;                        /* Cỡ chữ nhỏ */
+}
+
+/* Grid bên trong mỗi card */
+.grid {
+  display: grid;                          /* Grid layout */
+  grid-template-columns: 75% 25%;         /* Chia 2 cột 75/25 */
+  align-items: start;                     /* Căn top */
+  gap: 10px;                              /* Khoảng cách giữa cột */
+}
+
+.grid i {
+  font-size: 24px;                        /* Cỡ icon */
+  justify-self: end;                      /* Đẩy icon sang phải */
+  color: #199cdb;                         /* Màu xanh dương */
+}
+
+/* Timeline (thời gian) */
+.timeline {
+  font-style: italic;                     /* Nghiêng chữ */
+  font-size: 12px;                        /* Cỡ chữ nhỏ */
+}
+
+.timeline span {
+  background: #00d0ff;                    /* Nền xanh */
+  color: white;                           /* Chữ trắng */
+  padding: 2px 6px;                       /* Khoảng trong */
+  border-radius: 4px;                     /* Bo góc */
+}
+
+/* Phần Skills - Kỹ năng */
+.grid-2 {
+  display: grid;                          /* Grid layout */
+  grid-template-columns: repeat(4, 1fr); /* 4 cột bằng nhau */
+  text-align: center;                     /* Căn giữa nội dung */
+  margin-top: 20px;                       /* Khoảng cách trên */
+  gap: 10px;                              /* Khoảng cách giữa ô */
+  font-size: 13px;                        /* Cỡ chữ */
+}
+
+.grid-2 i {
+  font-size: 18px;                        /* Cỡ icon */
+  padding: 10px;                          /* Khoảng trong */
+  border: 2px solid #199cdb;              /* Viền xanh dương */
+  border-radius: 50%;                     /* Icon hình tròn */
+  margin-bottom: 5px;                     /* Khoảng dưới */
+}
+
+/* Thanh điểm kỹ năng */
+.skill-bar {
+  display: flex;                          /* Nằm ngang */
+  gap: 6px;                               /* Khoảng giữa */
+  margin: 6px 0 12px;                     /* Khoảng trên/dưới */
+}
+
+.score {
+  width: 35px;                            /* Chiều dài ô */
+  height: 5px;                            /* Chiều cao */
+  border-radius: 3px;                     /* Bo góc */
+  background-color: #ccc;                 /* Màu xám nhạt */
+}
+
+.score.blue {
+  background-color: #199cdb;              /* Màu xanh khi đạt điểm */
+}
+
+/* Phần Certificate - Chứng chỉ */
+#certificate {
+  padding: 40px 20px;                     /* Khoảng trong */
+}
+
+#certificate .container {
+  max-width: 1000px;                      /* Giới hạn chiều rộng */
+  margin: auto;                           /* Căn giữa */
+}
+
+.cert-grid {
+  display: grid;                          /* Grid layout */
+  grid-template-columns: repeat(2, 1fr); /* 2 cột */
+  gap: 20px;                              /* Khoảng cách giữa */
+}
+
+.cert-item {
+  display: grid;                          /* Grid layout */
+  grid-template-columns: 100px 1fr;       /* Cột ảnh và nội dung */
+  gap: 10px;                              /* Khoảng cách giữa */
+  align-items: center;                    /* Căn giữa dọc */
+  padding: 15px;                          /* Khoảng trong */
+  border-radius: 8px;                     /* Bo góc */
+  border: 2px solid #1e90ff;              /* Viền xanh dương */
+  background-color: #eaf6ff;              /* Nền xanh nhạt */
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); /* Đổ bóng nhẹ */
+}
+
+.cert-item img {
+  width: 100%;                            /* Chiếm toàn khung */
+  max-width: 100px;                       /* Giới hạn max 100px */
+  border-radius: 6px;                     /* Bo góc */
+  border: 1px solid #ddd;                 /* Viền xám nhạt */
+}
+
+.cert-item h3 {
+  font-size: 14px;                        /* Tiêu đề nhỏ */
+  margin-bottom: 8px;                     /* Khoảng dưới */
+}
+
+.cert-item p {
+  font-size: 13px;                        /* Cỡ chữ mô tả */
+  margin: 2px 0;                          /* Khoảng cách trên/dưới */
+  color: #333;                            /* Màu chữ */
+}
+
+/* Phần Project - Dự án */
+#project {
+  padding: 40px 20px;                     /* Khoảng trong */
+}
+
+.project-grid {
+  display: grid;                                    /* Grid layout */
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); /* Responsive cột */
+  gap: 20px;                                        /* Khoảng cách giữa */
+  margin-top: 20px;                                 /* Khoảng cách trên */
+}
+
+.project-card {
+  background: #fff;                       /* Nền trắng */
+  border: 1px solid #ddd;                 /* Viền xám nhạt */
+  border-radius: 10px;                    /* Bo góc */
+  overflow: hidden;                       /* Ẩn tràn */
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);  /* Đổ bóng nhẹ */
+  font-size: 13px;                        /* Cỡ chữ */
+}
+
+.project-card img {
+  width: 100%;                            /* Chiều ngang đầy đủ */
+  height: 140px;                          /* Chiều cao cố định */
+  object-fit: cover;                      /* Cắt ảnh giữ tỉ lệ */
+}
+
+.project-card h3 {
+  font-size: 16px;                        /* Tiêu đề dự án */
+  margin: 12px 16px 8px;                  /* Khoảng cách */
+}
+
+.project-info {
+  display: flex;                          /* Nằm ngang */
+  gap: 10px;                              /* Khoảng giữa */
+  font-size: 12px;                        /* Cỡ chữ nhỏ */
+  color: #555;                            /* Màu xám đậm */
+  padding: 0 16px;                        /* Khoảng ngang */
+  margin-bottom: 10px;                    /* Khoảng dưới */
+}
+
+.project-info .year {
+  background-color: #007bff;              /* Nền xanh dương */
+  color: white;                           /* Chữ trắng */
+  padding: 2px 6px;                       /* Khoảng trong */
+  border-radius: 4px;                     /* Bo góc */
+  font-size: 11px;                        /* Cỡ chữ nhỏ hơn */
+}
+
+.project-card table {
+  width: 100%;                            /* Chiếm toàn khung */
+  border-collapse: collapse;              /* Gộp viền */
+  font-size: 12px;                        /* Cỡ chữ */
+}
+
+.project-card th,
+.project-card td {
+  text-align: left;                       /* Căn trái */
+  padding: 6px 12px;                      /* Khoảng trong */
+  border-top: 1px solid #eee;             /* Viền trên nhạt */
+  vertical-align: top;                    /* Căn trên */
+}
+
+.project-card th {
+  width: 70px;                            /* Chiều rộng tiêu đề */
+  font-weight: bold;                      /* Đậm chữ */
+  color: #333;                            /* Màu xám đậm */
+}
+
+/* Footer */
+.social-footer {
+  background-color: #f8f8f8;              /* Nền xám nhạt */
+  text-align: center;                     /* Căn giữa */
+  padding: 15px 10px;                     /* Khoảng trong */
+  font-size: 13px;                        /* Cỡ chữ */
+}
+
+.social-footer a {
+  margin: 0 8px;                          /* Khoảng ngang */
+  color: #666;                            /* Màu xám */
+  text-decoration: none;                  /* Bỏ gạch chân */
+  font-size: 14px;                        /* Cỡ chữ */
+}
+
+.social-footer i {
+  margin-right: 4px;                      /* Khoảng icon - chữ */
+  color: #3498db;                         /* Màu xanh dương */
+  font-size: 18px;                        /* Cỡ icon */
+}
+
+/* Responsive Grid and Layouts */
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 cột */
+  gap: 20px;                             /* Khoảng cách */
+  max-width: 1000px;                     /* Giới hạn chiều rộng */
+  margin: auto;                          /* Căn giữa */
+  padding: 0 20px;                       /* Khoảng ngang */
+}
+
+@media (max-width: 1024px) {
+  .grid-3 {
+    grid-template-columns: repeat(2, 1fr); /* 2 cột cho tablet */
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+    font-size: 13px;                        /* Chữ nhỏ hơn */
+  }
+
+  .grid-3 {
+    grid-template-columns: 1fr;             /* 1 cột cho mobile */
+    padding: 0 10px;
+    gap: 15px;
+  }
+
+  #nav-bar .container {
+    flex-direction: column;                 /* Navbar dọc */
+    padding: 10px 0;
+  }
+
+  #nav-bar .container a {
+    width: 100%;                            /* Chiếm toàn ngang */
+    font-size: 16px;
+    padding: 12px 0;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-sizing: border-box;
+  }
+
+  #about .container,
+  .cert-grid,
+  .project-grid,
+  .grid-3-row-2 {
+    grid-template-columns: 1fr;             /* 1 cột */
+    padding: 0;
+    gap: 15px;
+  }
+
+  .cert-item {
+    grid-template-columns: 70px 1fr;
+    gap: 8px;
+    padding: 10px;
+  }
+
+  .cert-item img {
+    max-width: 70px;
+  }
+
+  .grid-2 {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 6px;
+  }
+
+  .grid i {
+    font-size: 20px;
+    justify-self: start;
+  }
+
+  .project-card img {
+    height: 120px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .grid-3-row-2 {
+    grid-template-columns: repeat(2, 1fr); /* Tablet 2 cột */
+  }
+}
+
+/* Nút ẩn/hiện khi hover card */
+.border-1:hover .btn,
+.card:hover .btn {
+  opacity: 1;
+}
+
+.border-1 .btn,
+.card .btn {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
