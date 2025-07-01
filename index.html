@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Assignment 02</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="./css/style.css" />
+  <link rel="stylesheet" href="./css/font.css" />
+  <style>
+    #personal-info {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+<!-- Banner -->
+  <div class="img-banner">
+    <img src="images/banner.jpg" alt="banner" width="100%" />
+    <div id="banner">
+      <h1>Phan Quang Vĩnh Tiến</nav></h1>
+      <span>Full Stack Developer</span>
+    </div>
+  </div>
+
+ <!-- Nav Bar -->
+<section id="nav-bar">
+  <nav class="container">
+    <a href="#"><i class="icon-user"></i> Thông tin</a>
+    <a href="#"><i class="icon-doc-text-inv"></i> Lý lịch</a>
+    <a href="#"><i class="icon-mail-alt"></i> Chứng chỉ</a>
+    <a href="#"><i class="icon-star-1"></i> Dự án</a>
+  </nav>
+</section>
+
+
+  <!-- About Section -->
+  <section id="about" class="bg-grey">
+    <div class="container row">
+      <!-- Mục tiêu nghề nghiệp -->
+      <div id="target" class="col">
+        <h1 class="section-title">Mục tiêu nghề nghiệp</h1>
+        <p>
+          Là một sinh viên đã hoàn thành chương trình chứng chỉ Doanh Nghiệp của FUNiX. Em mong muốn mình sẽ được làm việc với vị trí 
+          <b>Fullstack Developer</b>, có thể vận dụng những kiến thức đã học và không ngừng học hỏi để phát triển bản thân, cũng như hoàn thành tốt nhất công việc được giao.
+        </p>
+      </div>
+
+      <!-- Khối chứa cả form nhập mật khẩu và thông tin cá nhân -->
+      <div class="col" id="info-container">
+        <!-- Form nhập mật khẩu -->
+        <div id="password-form">
+          <h1 class="section-title">Thông tin cá nhân</h1>
+          <input type="password" id="password-input" placeholder="Nhập email" class="form-control mb-2"/>
+          <button class="btn btn-primary" onclick="checkPassword()">Submit</button>
+          <p id="error-msg" class="text-danger mt-2"></p>
+        </div>
+
+        <!-- Thông tin cá nhân -->
+        <div id="personal-info">
+          <h1 class="section-title">Thông tin cá nhân</h1>
+          <ul class="info">
+            <li><span>Giới tính:</span> Nam</li>
+            <li><span>Ngày sinh:</span> 31/07/2005</li>
+            <li><span>Điện thoại:</span> (+84) 76370125</li>
+            <li><span>Email:</span> trinit@funix.edu.vn</li>
+            <li><span>Địa chỉ:</span> Số 10, đường 10, Hà Nội</li>
+            <li><span>Website:</span> https://abc.tech</li>
+          </ul>
+          <ul class="icon">
+            <li class="icon-twitter"></li>
+            <li class="icon-facebook"></li>
+            <li class="icon-gplus"></li>
+            <li class="icon-linkedin"></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- JavaScript -->
+  <script>
+    function checkPassword() {
+      const input = document.getElementById("password-input").value;
+      const correctPassword = "tienpqvfx54822@funix.edu.vn";
+      const personalInfo = document.getElementById("personal-info");
+      const passwordForm = document.getElementById("password-form");
+      const errorMsg = document.getElementById("error-msg");
+
+      if (input === correctPassword) {
+        passwordForm.style.display = "none";
+        personalInfo.style.display = "block";
+        errorMsg.innerText = "";
+      } else {
+        errorMsg.innerText = "Mật khẩu không đúng. Vui lòng thử lại.";
+      }
+    }
+  </script>
+
+</body>
+</html>
+    <section id="job-info">
+  <div class="grid-3-row-2">
+<!-- Kinh nghiệm -->
+<div class="border-1">
+  <div class="grid">
+    <h1>Kinh nghiệm</h1>
+    <i class="ic-toolbox"></i>
+  </div>
+  <div id="exp-content" style="display: none;">
+    <ul>
+      <li><strong>Full Stack Developer - Công ty Y</strong>
+        <div class="timeline">05/2022 - <span>Hiện tại</span></div>
+      </li>
+      <li>- Xây dựng, phát triển Website dựa trên thiết kế và yêu cầu đã có.</li>
+      <li>- Phân tích và thiết kế Database, sử dụng các hệ quản trị CSDL.</li>
+      <li>- Sử dụng ngôn ngữ server-side (Python, Java, ...)</li>
+      <li><br /></li>
+      <li><strong>Web Designer - Công ty X</strong>
+        <div class="timeline">06/2021 - 04/2022</div>
+      </li>
+      <li>- Thiết kế Website theo yêu cầu khách hàng.</li>
+      <li>- Dùng Figma, Canva, PTS.</li>
+    </ul>
+  </div>
+  <button class="btn btn-outline-primary mt-2" onclick="toggleSection('exp-content', 'exp-btn')" id="exp-btn">View More</button>
+</div>
+
+<!-- Học vấn -->
+<div class="border-1">
+  <div class="grid">
+    <h1>Học vấn</h1>
+    <i class="ic-pencil"></i>
+  </div>
+  <div id="edu-content" style="display: none;">
+    <ul>
+      <li><strong>FUNiX</strong> <div class="timeline">06/2021 - 05/2022</div></li>
+      <li>- Chứng chỉ doanh nghiệp Fullstack.</li>
+      <li>- GPA: 9 / 10</li>
+      <li><br /></li>
+      <li><strong>ĐH FPT</strong> <div class="timeline">09/2016 - 07/2019</div></li>
+      <li>- Chuyên ngành: Kỹ thuật phần mềm</li>
+      <li>- GPA: 3.2 / 4</li>
+    </ul>
+  </div>
+  <button class="btn btn-outline-primary mt-2" onclick="toggleSection('edu-content', 'edu-btn')" id="edu-btn">View More</button>
+</div>
+
+<!-- Hoạt động -->
+<div class="border-1">
+  <div class="grid">
+    <h1>Hoạt động</h1>
+    <i class="ic-toolbox"></i>
+  </div>
+  <div id="act-content" style="display: none;">
+    <ul>
+      <li><strong>FPT Edu Hackathon 2019</strong> <div class="timeline">03/2019 - 05/2019</div></li>
+      <li>- Giải 3 bảng A</li>
+      <li>- Đề tài: Trang web phân loại rác</li>
+      <li><br /></li>
+      <li><strong>Câu lạc bộ Z</strong> <div class="timeline">08/2016 - 08/2017</div></li>
+      <li>- Trưởng ban chuyên môn</li>
+    </ul>
+  </div>
+  <button class="btn btn-outline-primary mt-2" onclick="toggleSection('act-content', 'act-btn')" id="act-btn">View More</button>
+</div>
+
+<!-- Sở thích -->
+<div class="border-1">
+  <div class="grid">
+    <h1>Sở thích</h1>
+    <i class="ic-telescope"></i>
+  </div>
+  <div id="hobby-content" style="display: none;">
+    <div class="grid-2">
+      <div><i class="ic-megaphone"></i><p>Âm nhạc</p></div>
+      <div><i class="ic-strategy"></i><p>Chơi game</p></div>
+      <div><i class="ic-hotairballoon"></i><p>Du lịch</p></div>
+      <div><i class="ic-basket"></i><p>Nấu ăn</p></div>
+    </div>
+  </div>
+  <button class="btn btn-outline-primary mt-2" onclick="toggleSection('hobby-content', 'hobby-btn')" id="hobby-btn">View More</button>
+</div>
+
+<!-- Ngôn ngữ -->
+<div class="border-1">
+  <div class="grid">
+    <h1>Ngôn ngữ</h1>
+    <i class="ic-mic"></i>
+  </div>
+  <div id="lang-content" style="display: none;">
+    <p>Tiếng Anh - IELTS 7.0</p>
+    <div class="skill-bar">
+      <span class="score blue"></span>
+      <span class="score blue"></span>
+      <span class="score grey"></span>
+    </div>
+    <p>Tiếng Nhật - JLPT N4</p>
+    <div class="skill-bar">
+      <span class="score blue"></span>
+      <span class="score grey"></span>
+      <span class="score grey"></span>
+    </div>
+  </div>
+  <button class="btn btn-outline-primary mt-2" onclick="toggleSection('lang-content', 'lang-btn')" id="lang-btn">View More</button>
+</div>
+
+<!-- Kỹ năng -->
+<div class="border-1">
+  <div class="grid">
+    <h1>Kỹ năng</h1>
+    <i class="ic-tools-2"></i>
+  </div>
+  <div id="skill-content" style="display: none;">
+    <p>HTML/CSS: Fundamental</p>
+    <div class="skill-bar">
+      <span class="score blue"></span>
+      <span class="score grey"></span>
+      <span class="score grey"></span>
+    </div>
+    <p>JavaScript: Intermediate</p>
+    <div class="skill-bar">
+      <span class="score blue"></span>
+      <span class="score blue"></span>
+      <span class="score grey"></span>
+    </div>
+    <p>NodeJS: Intermediate</p>
+    <div class="skill-bar">
+      <span class="score blue"></span>
+      <span class="score blue"></span>
+      <span class="score grey"></span>
+    </div>
+    <p>Bootstrap: Fundamental</p>
+    <div class="skill-bar">
+      <span class="score blue"></span>
+      <span class="score grey"></span>
+      <span class="score grey"></span>
+    </div>
+  </div>
+  <button class="btn btn-outline-primary mt-2" onclick="toggleSection('skill-content', 'skill-btn')" id="skill-btn">View More</button>
+</div>
+
+</section>
+
+  <!-- Chứng chỉ - Giải thưởng -->
+<section id="certificate" class="bg-grey">
+  <div class="container">
+    <h1 class="section-title">Chứng chỉ - Giải thưởng</h1>
+    <div class="cert-grid">
+      <!-- Hàng 1 -->
+      <div class="cert-item border-right">
+        <img src="images/Cert_WEB.png" alt="Chứng chỉ Web" />
+        <div>
+          <h3>CHỨNG CHỈ LẬP TRÌNH WEB - FUNiX</h3>
+          <p>- Chứng chỉ thuộc chương trình CCDN</p>
+          <p>- GPA: 8.6</p>
+        </div>
+      </div>
+      <div class="cert-item">
+        <img src="images/Cert_PRF.png" alt="Chứng chỉ JavaScript" />
+        <div>
+          <h3>CHỨNG CHỈ LẬP TRÌNH JAVASCRIPT - FUNiX</h3>
+          <p>- Chứng chỉ thuộc chương trình CCDN</p>
+          <p>- GPA: 8.9</p>
+        </div>
+      </div>
+
+      <!-- Hàng 2 -->
+      <div class="cert-item border-top">
+        <img src="images/Cert_WEB.png" alt="Chứng chỉ Database" />
+        <div>
+          <h3>CHỨNG CHỈ THIẾT KẾ DATABASE - FUNiX</h3>
+          <p>- Chứng chỉ thuộc chương trình CCDN</p>
+          <p>- GPA: 8.0</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Dự án -->
+<section id="project" class="bg-white">
+  <div class="container">
+    <h1 class="section-title">Dự án</h1>
+    <div class="project-grid">
+
+      <!-- Dự án 1 -->
+      <div class="project-card">
+        <img src="images/project_1.png" alt="CV cá nhân">
+        <h3>CV CÁ NHÂN</h3>
+        <div class="project-info">
+          <span class="year">2021</span>
+          <span><i class="icon-user"></i>FUNiX</span>
+          <span><i class="icon-lightbulb"></i>Developer</span>
+        </div>
+        <table>
+          <tr>
+            <th>Mô tả</th>
+            <td>Trang Web CV cá nhân online. Gồm các thông tin cá nhân và kỹ năng nghề nghiệp.</td>
+          </tr>
+          <tr>
+            <th>Nhiệm vụ</th>
+            <td>- Phát triển code - Review code - Tối ưu code - Xử lý lỗi</td>
+          </tr>
+          <tr>
+            <th>Công nghệ</th>
+            <td>- HTML, CSS</td>
+          </tr>
+        </table>
+      </div>
+
+      <!-- Dự án 2 -->
+      <div class="project-card">
+        <img src="images/project_2.png" alt="Quản lý thú cưng">
+        <h3>TRANG WEB QUẢN LÝ THÚ CƯNG</h3>
+        <div class="project-info">
+          <span class="year">2021</span>
+          <span><i class="icon-user"></i>FUNiX</span>
+          <span><i class="icon-lightbulb"></i>Developer</span>
+        </div>
+        <table>
+          <tr>
+            <th>Mô tả</th>
+            <td>Ứng dụng giúp quản lý các thông tin của thú cưng như: Cân nặng, giống, tình trạng tiêm chủng, ... bao gồm các chức năng thêm / sửa / xóa.</td>
+          </tr>
+          <tr>
+            <th>Nhiệm vụ</th>
+            <td>- Phát triển code - Review code - Tối ưu code - Xử lý lỗi</td>
+          </tr>
+          <tr>
+            <th>Công nghệ</th>
+            <td>- HTML, CSS, Javascript</td>
+          </tr>
+        </table>
+      </div>
+
+      <!-- Dự án 3 -->
+      <div class="project-card">
+        <img src="images/project_3.png" alt="Xem tin tức">
+        <h3>TRANG WEB XEM TIN TỨC</h3>
+        <div class="project-info">
+          <span class="year">2021</span>
+          <span><i class="icon-user"></i>FUNiX</span>
+          <span><i class="icon-lightbulb"></i>Developer</span>
+        </div>
+        <table>
+          <tr>
+            <th>Mô tả</th>
+            <td>Trang Web xem tin tức từ nhiều nguồn khác nhau, người dùng có thể tìm kiếm các tin liên quan theo các từ khoá.</td>
+          </tr>
+          <tr>
+            <th>Nhiệm vụ</th>
+            <td>- Phát triển code - Review code - Tối ưu code - Xử lý lỗi</td>
+          </tr>
+          <tr>
+            <th>Công nghệ</th>
+            <td>- HTML, CSS, Javascript</td>
+          </tr>
+        </table>
+      </div>
+
+    </div>
+  </div>
+</section>
+<footer class="social-footer">
+  <a href="https://facebook.com" target="_blank">
+    <i class="icon-facebook"></i> Facebook
+  </a>
+  <a href="https://linkedin.com" target="_blank">
+    <i class="icon-linkedin"></i> LinkedIn
+  </a>
+  <a href="https://github.com" target="_blank">
+    <i class="icon-github"></i> Github
+  </a>
+</footer>
+<script>
+  function toggleSection(contentId, buttonId) {
+    const content = document.getElementById(contentId);
+    const button = document.getElementById(buttonId);
+    const isHidden = content.style.display === "none";
+
+    content.style.display = isHidden ? "block" : "none";
+    button.innerText = isHidden ? "View Less" : "View More";
+  }
+</script>
+
+</body>
+</html>
